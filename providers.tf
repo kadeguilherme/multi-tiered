@@ -1,0 +1,3 @@
+aws {
+  region  = var.region
+}

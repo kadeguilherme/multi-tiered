@@ -1,0 +1,1 @@
+namespace = "my-cool-project"
