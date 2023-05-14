@@ -23,7 +23,7 @@ A figura abaixo ilustra uma arquitetura de aplicaćao web 3-Tier:
 ## Caracteristicas
 Este projeto é dividido em 3 partes:
 - Networking - Toda a parte relacionado a networking, VPC (Virtual Private Cloud), subnets e security groups
-- Database - Bando de dados SQL da infraestrutura
+- Database - Banco de dados SQL da infraestrutura
 - Autoscaling - Load balancer, EC2 autoscaling group e launch template
 
 
