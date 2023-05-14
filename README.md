@@ -35,6 +35,12 @@ Este projeto é dividido em 3 partes:
 ```bash
       $ terraform init  
       $ terraform apply
+      
+      -----------------------------------------------------------------------
+      Outputs:
+
+      db_password = "Xgc3XZiBQzIzEkB7" #SENHA DO BANCO
+      lb_dns_name = "my-cool-project-931686103.us-east-1.elb.amazonaws.com" #DNS name do LB
   ```
   O comando destrói a infrasturura
   
