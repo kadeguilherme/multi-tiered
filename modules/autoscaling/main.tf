@@ -1,4 +1,4 @@
-module " iam_instance_profile" {
+module "iam_instance_profile" {
   source  = "terraform-in-action/iip/aws"
   actions = ["logs:*", "rds:*"]
 }
@@ -16,7 +16,7 @@ data "aws_ami" "ubuntu" {
   most_recent = true
   filter {
     name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"]
+    values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"]
   }
   owners = ["099720109477"]
 }
@@ -26,7 +26,7 @@ resource "aws_launch_template" "webserver" {
   image_id      = data.aws_ami.ubuntu.id
   instance_type = "t2.micro"
   user_data     = data.cloudinit_config.config.rendered
-  key_name      = var.ssh_keypair
+  key_name      = "teste"
   iam_instance_profile {
     name = module.iam_instance_profile.name
   }
@@ -37,7 +37,7 @@ resource "aws_autoscaling_group" "webserver" {
   name                = "${var.namespace}-asg"
   min_size            = 1
   max_size            = 3
-  vpc_zone_identifier = var.vpc.private_subnets
+  vpc_zone_identifier = var.vpc.public_subnets
   target_group_arns   = module.alb.target_group_arns
   launch_template {
     id      = aws_launch_template.webserver.id
