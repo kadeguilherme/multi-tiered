@@ -30,10 +30,7 @@ Este projeto é dividido em 3 partes:
 # Usage
 
 - Com as chaves da AWS configurada no seu ambiente (Linux)
-```bash
-    $ export AWS_ACCESS_KEY_ID="minha-chave-acesso"
-    $ export AWS_SECRET_ACCESS_KEY="minha-chave-secreta"   
- ```
+
  ## Let's start bulding the web application on AWS
 ```bash
       $ terraform init  
